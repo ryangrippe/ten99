@@ -1,0 +1,59 @@
+{
+  "name": "@earndrift/ten99",
+  "version": "0.1.0",
+  "description": "Year-aware IRS 1099-NEC threshold checker. Handles the OBBBA (Pub. L. 119-21) $600 → $2,000 jump for tax year 2026+. Zero dependencies.",
+  "keywords": [
+    "1099",
+    "1099-nec",
+    "irs",
+    "tax",
+    "threshold",
+    "obbba",
+    "contractor",
+    "compliance",
+    "payroll"
+  ],
+  "homepage": "https://earndrift.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earndrift/ten99.git"
+  },
+  "bugs": {
+    "url": "https://github.com/earndrift/ten99/issues"
+  },
+  "author": "EarnDrift (https://earndrift.com)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "ten99": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
